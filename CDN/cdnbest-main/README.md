@@ -17,48 +17,6 @@
 
 4.使用相关文档可查看使用帮助文档
 
-cdnbest uid：448054、
-
-cdnbest 2节点免费用户使用办法
-http://115.29.242.83/user/#/index  在这里注册，需要绑定hosts到198.11.172.242  license.cdnbest.net
-安装程序 https://github.com/1265578519/cdnbest
-完整开放式api接口 http://115.29.242.83/swagger-ui.html
-详细帮助文档 https://web.archive.org/web/20200922044808/https://help.cdnbest.com/
-
-
-
-cdnbest 4.6.16本地主控版本对接的dnsdun api域名地址是什么，kangle vip授权
-
-dnsdun文档中开放式api为
-curl "https://api.dnsdun.com/?c=info&a=version"
-复制代码
-
-
-cdnbest主控对接dnsdun用的为
-curl "https://www.dnsdun.com/api/index.php?c=info&a=version"
-复制代码
-
-
-
-其它一些api调用
-主控vip到期时间授权验证
-https://license.cdnbest.com/vip
-复制代码
-
-
-主控ssl证书申请
-https://10086.ssl-query.cdnbest.com:3350/requestcsrnew
-复制代码
-
-
-主控访问api失败响应官方错误页面
-https://console.cdnbest.com/system/error?uid=2182&code=504&vh=cdnbest.com
-复制代码
-
-
-节点获取主控ip信息，用作初始化节点连接到主控ip通讯使用
-https://license.cdnbest.net
-复制代码
 
 独立系统一键安装脚本:（10086换成您自已帐号的授权uid号）
 ```

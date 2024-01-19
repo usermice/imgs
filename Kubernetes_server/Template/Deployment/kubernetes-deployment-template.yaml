@@ -11,10 +11,10 @@ spec:  	# 详情描述
   paused: false  	# 暂停部署，默认是false 
   progressDeadlineSeconds: 600  	# 部署超时时间（s），默认是600
   strategy:  	# pod更新策略，即如何替换已有的pod
-    type: RollingUpdate  	# 更新策略、支持 Recreate, RollingUpdate。默认RollingUpdate
     rollingUpdate:  	# 当type为RollingUpdate的时候生效，用于为rollingUpdate设置参数
       maxUnavailable: 30%  	# 用来指定在升级过程中不可用的Pod的最大数量，默认为25%。
       maxSurge: 30%  	# 用来指定在升级过程中可以超过期望的Pod的最大数量，默认为25%
+    type: RollingUpdate  	# 更新策略、支持 Recreate, RollingUpdate。默认RollingUpdate
   selector:  	# 选择器，通过它指定该控制器管理哪些pod 
     matchLabels:  	# Labels匹配规则，matchExpressions：Expressions匹配规则 
       name: deployment-nginx-template 

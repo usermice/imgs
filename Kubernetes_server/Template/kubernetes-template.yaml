@@ -33,11 +33,16 @@ spec:   # Pod中容器的详细定义
       nodeName: k8s-node1   # 设置NodeName表示将该Pod调度到指定到名称的node节点上
       nodeSelector: obeject   # 设置NodeSelector表示将该Pod调度到包含这个label的node上
       hostNetwork: false    # 是否使用主机网络模式，默认为false，如果设置为true，表示使用宿主机网络
+      tolerations:  	# 容忍配置
+      - effect: "污点的类型"  # Noschedule
+        key: "污点的Key"  	# 污点的Key
+        operate: "Equal"  	# Exists：匹配Key，Equal添加：value配置，
+        value: "污点的value"  	# 污点的value
+      imagePullSecrets:   # Pull镜像时使用的secret名称，以key：secretkey格式指定
+      - name: docker-harbor   # 指定使用的secret库房名称
       containers:   # 对于 Pod中容器描述
       - name: tomcat-demo   # 指定容器名称，不可更新
         image: 192.168.80.210:8080/test/tomcat-demo:v1    # 镜像仓库地址
-        imagePullSecrets:   # Pull镜像时使用的secret名称，以key：secretkey格式指定
-        - name: docker-harbor   # 指定使用的secret库房名称
         imagePullPolicy: [ Always | Never | IfNotPresent ]    # 镜像拉取方式
         command: [string]   # 以数组方式指定容器启动命令列表，如不指定，使用打包时使用的启动命令
         args:   # 以数组方式指定容器启动命令参数列表，替代docker的CMD指令
